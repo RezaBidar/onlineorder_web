@@ -20,6 +20,10 @@ Route::get('/' , function(){
 });
 
 
+Route::get('/log' , function(){
+		return 'welcom to Login :)))) ';
+});
+
 Route::group(['domain' => 'reza.kamyabi.me'], function()
 {
     Route::get('/login' , function(){
