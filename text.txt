@@ -1,0 +1,3 @@
+file picker
+https://github.com/guillermomartinez/filemanager-laravel 
+http://docs.hazzardweb.com/filepicker/1.0/laravel
