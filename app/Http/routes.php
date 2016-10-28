@@ -16,7 +16,11 @@
 //     return "Hello Auth.Basic" ;
 // }]);
 Route::get('/' , function(){
-	return 'welcom to laravel ';
+	if(in_array('mod_rewrite', apache_get_modules())){
+    	echo 'Enabled';
+	} else {
+    	echo 'Disabled';
+	}
 });
 
 
