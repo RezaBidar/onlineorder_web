@@ -15,6 +15,8 @@ class DashboardController extends Controller
 {
  	public function index()
  	{
+ 		if(Auth::user()->isAdmin())
+ 			return view('admindash');
  		
  		// if(Auth::user()->type == User::TYPE_VISITOR )
  		// {
