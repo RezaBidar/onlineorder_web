@@ -18,6 +18,10 @@
 Route::get('/' , function(){
 	return 'welcom to laravel ';
 });
+
+Route::get('/login' , function(){
+	return 'welcom to Login enter user pass khkhkhkhkh :)))) ';
+});
 // Route::get('dummy' , 'DashboardController@dummy');
 
 // Route::post('login' , 'AuthController@authenticate');
