@@ -19,8 +19,19 @@ Route::get('/' , function(){
 	return 'welcom to laravel ';
 });
 
-Route::get('/login' , function(){
-	return 'welcom to Login enter user pass khkhkhkhkh :)))) ';
+
+Route::group(['domain' => 'reza.kamyabi.me'], function()
+{
+    Route::get('/login' , function(){
+		return 'welcom to Login enter user pass khkhkhkhkh :)))) ';
+	});
+});
+
+Route::group(['domain' => 'reza.kamyabi.me:8080'], function()
+{
+    Route::get('/logout' , function(){
+		return 'welcom to logout enter user pass khkhkhkhkh :)))) ';
+	});
 });
 // Route::get('dummy' , 'DashboardController@dummy');
 
