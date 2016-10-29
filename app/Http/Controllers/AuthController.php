@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Auth ;
+use Session;
 
 class AuthController extends Controller
 {
@@ -19,6 +20,10 @@ class AuthController extends Controller
         if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
             // Authentication passed...
             return redirect()->intended('dashboard');
+        }
+        else{
+            Session::flash('error' , 'نام کاربری یا کلمه ی عبور اشتباه است');
+            return redirect('login') ;
         }
     }
 

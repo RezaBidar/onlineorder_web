@@ -84,7 +84,7 @@ class ProductController extends Controller
             $product = new Product;
             $product->code = $request->code ;
             $product->name = $request->name ;
-            $product->description = $request->description ;
+            $product->description = nl2br($request->description);
             $product->unit = $request->unit ;
             $product->price = $request->price ;
             $product->category_id =  $request->category_id;
@@ -182,6 +182,7 @@ class ProductController extends Controller
             $product->name = $request->name ;
             $product->unit = $request->unit ;
             $product->price = $request->price ;
+            $product->description = nl2br($request->description);
 
             if ($request->hasFile('pic')) {
                 $product->deletePic();

@@ -72,7 +72,7 @@ class CustomerController extends Controller
             $user->username = $request->username ;
             $user->password = bcrypt($request->password) ;
             $user->tel = $request->tel ;
-            $user->description = $request->description ;
+            $user->description = nl2br($request->description);
             $user->address = $request->address ;
             $user->type = User::TYPE_CUSTOMER ;
 
@@ -163,7 +163,7 @@ class CustomerController extends Controller
             if(!empty($request->password))
                 $user->password = bcrypt($request->password);
             $user->tel = $request->tel ;
-            $user->description = $request->description ;
+            $user->description = nl2br($request->description);
             $user->address = $request->address ;
             // $user->type = User::TYPE_CUSTOMER ;
             if ($request->hasFile('pic')) {

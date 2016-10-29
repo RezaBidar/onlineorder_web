@@ -58,7 +58,7 @@
 					  			<td>{{ $product->code }}</td>
 					  			<td>{{ $product->name }}</td>
 					  			<td>{{ $product->price }}</td>
-					  			<td>{{ $product->description }}</td>
+					  			<td>{{ removeBr($product->description) }}</td>
 					  			<td>
 					  				<a href="{{ route('product.show' , $product->id)}}" class="btn btn-small btn-info">
 					  					<i class="btn-icon-only icon-ok"></i>

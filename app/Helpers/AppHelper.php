@@ -164,3 +164,11 @@ if (! function_exists('getCurrentUserCompany'))
         return (sizeof($companies) > 0 ) ? $companies[0] : null ;
     }
 }
+
+if(! function_exists('removeBr'))
+{
+    function removeBr($str)
+    {
+        return preg_replace("#<br />#", "**", $str);
+    }
+}

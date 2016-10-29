@@ -60,7 +60,7 @@ class CompanyController extends Controller
             $user->name = $request->name ;
             $user->username = $request->username ;
             $user->password = bcrypt($request->password) ;
-            $user->description = $request->description;
+            $user->description = nl2br($request->description);
             $user->type = USER::TYPE_OPERATOR ;
 
             if ($request->hasFile('pic')) {
@@ -71,7 +71,7 @@ class CompanyController extends Controller
                 $img = Image::make($request->file('pic')->getPathName() )->resize(200, 200);
                 $img->save($thumbnailPath . '/' . $fileName , 70 );
 
-                $product->pic = $fileName ;
+                $user->pic = $fileName ;
             }
 
             $user->save() ;
@@ -145,6 +145,7 @@ class CompanyController extends Controller
             $operator->name = $request->name ;
             $operator->username = $request->username ;
             $operator->password = bcrypt($request->password) ;
+            $operator->description = nl2br($request->description);
             $operator->type = USER::TYPE_OPERATOR ;
             $operator->save() ;
 

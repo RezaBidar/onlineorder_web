@@ -18,7 +18,7 @@
 
 Route::get('dummy' , 'DashboardController@dummy');
 
-Route::post('login' , 'AuthController@authenticate');
+Route::post('auth/login' , ['as' => 'auth.login' , 'uses' => 'AuthController@authenticate']);
 Route::get('login' , 'AuthController@login');
 Route::get('products' , 'WebServicesController@getProducts');
 

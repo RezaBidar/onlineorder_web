@@ -5,6 +5,7 @@
 
 @section('content')
 
+
 <div class="tabbable">
 	<ul class="nav nav-tabs">
 		<?php $first = true ; $activeId = 0 ?>
@@ -55,7 +56,7 @@
 					  			<td>{{ $product->code }}</td>
 					  			<td>{{ $product->name }}</td>
 					  			<td>{{ $product->price }}</td>
-					  			<td>{{ $product->description }}</td>
+					  			<td>{{ removeBr($product->description) }}</td>
 					  		</tr>
 					  	@endforeach
 					  	</tbody>

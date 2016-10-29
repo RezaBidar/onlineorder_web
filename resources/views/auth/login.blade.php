@@ -43,8 +43,13 @@
 <div class="account-container">
 	
 	<div class="content clearfix">
-		
-		<form action="#" method="post">
+		@if(Session::has('error'))
+	        <div class="alert alert-danger">
+	        {!! Session::get('error') !!}
+	        <button type="button" class="close" data-dismiss="alert">×</button>
+	        </div>
+	    @endif		
+		<form action="{{ route('auth.login') }}" method="post">
 			{{ csrf_field() }}
 
 			<h1>ورود اعضا</h1>		

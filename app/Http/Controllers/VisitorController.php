@@ -70,6 +70,7 @@ class VisitorController extends Controller
             $user->name = $request->name ;
             $user->username = $request->username ;
             $user->password = bcrypt($request->password) ;
+            $user->description = nl2br($request->description);
             $user->tel = $request->tel ;
             $user->type = User::TYPE_VISITOR ;
 
@@ -156,6 +157,7 @@ class VisitorController extends Controller
             // $visitor->username = $request->username ;
             $visitor->password = bcrypt($request->password) ;
             $visitor->tel = $request->tel ;
+            $visitor->description = nl2br($request->description);
             if ($request->hasFile('pic')) {
                 $visitor->deletePic();
                 $destinationPath = "pic/avatars";
@@ -168,7 +170,6 @@ class VisitorController extends Controller
                 // $request->file('pic')->move($destinationPath, $fileName);
                 $visitor->pic = $fileName ;
             }
-            $user->save() ;
             $visitor->save();
             $visitor->companies()->sync($companies[0]->id);
 

@@ -69,4 +69,20 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Get the failed login response instance.
+     *
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return redirect('/login');
+    }
+
+    public function login(Request $request)
+    {
+        return 'laf';
+    }
 }

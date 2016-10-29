@@ -1,9 +1,10 @@
 @extends('templates.main')
 
-@section('content_title' , 'لیست سفارشات')
+@section('content_title' , 'لیست سفارشات' . '<a href="'. route('order.create') .'" class="btn btn-info pull-left">ثبت سفارش جدید</a>')
 @section('panel_size' , 'span12')
 
 @section('content')
+
 
 {!! BootForm::open(['method' => 'GET'])!!}
 <div class="pull-right">
