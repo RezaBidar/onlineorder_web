@@ -76,7 +76,7 @@ class CompanyController extends Controller
 
             $user->save() ;
 
-            $company->user()->attach($user);
+            $company->users()->attach($user);
 
             DB::commit();
 
@@ -86,7 +86,7 @@ class CompanyController extends Controller
         catch(\Exception $e){
             DB::rollback();
             Log::info($e->getMessage());
-            Session::flash('message' , 'Company Can`t Save ');
+            Session::flash('message' , 'Company Can`t Save ' . $e->getMessage());
             Session::flash('alert_class' , 'alert-danger');   
         }
 
